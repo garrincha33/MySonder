@@ -9,16 +9,25 @@
 import UIKit
 
 class MainFeedViewController: UIViewController {
+    
+    let addPhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "addPhoto"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        view.backgroundColor = .red
+
+        view.backgroundColor = .black
         
-        
-        
-        
-        
+        view.addSubview(addPhotoButton)
+        addPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        addPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
+        addPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addPhotoButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+
     }
 
  
