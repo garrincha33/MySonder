@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA3210A3A8D0064521D /* AppDelegate.swift */; };
-		1B05CCA6210A3A8D0064521D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA5210A3A8D0064521D /* MainFeedViewController.swift */; };
+		1B05CCA6210A3A8D0064521D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA5210A3A8D0064521D /* LoginViewController.swift */; };
 		1B05CCA9210A3A8D0064521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCA7210A3A8D0064521D /* Main.storyboard */; };
 		1B05CCAB210A3A8F0064521D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAA210A3A8F0064521D /* Assets.xcassets */; };
 		1B05CCAE210A3A8F0064521D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAC210A3A8F0064521D /* LaunchScreen.storyboard */; };
 		1B05CCB6210A3C2A0064521D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCB5210A3C2A0064521D /* GoogleService-Info.plist */; };
 		1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC3210CB2F2001F016A /* UIColor.swift */; };
+		1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */; };
+		1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */; };
+		1BCBCDCA210E14AA001F016A /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */; };
 		FFF3F5528B57833F260676C7 /* Pods_Sonder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3FCE7F359FAECCA2481095 /* Pods_Sonder.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,13 +24,16 @@
 		1AFC47CF8CBC7963001ECB50 /* Pods-Sonder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonder/Pods-Sonder.release.xcconfig"; sourceTree = "<group>"; };
 		1B05CCA0210A3A8C0064521D /* Sonder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B05CCA3210A3A8D0064521D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B05CCA5210A3A8D0064521D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		1B05CCA5210A3A8D0064521D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B05CCA8210A3A8D0064521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B05CCAA210A3A8F0064521D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B05CCAD210A3A8F0064521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B05CCAF210A3A8F0064521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B05CCB5210A3C2A0064521D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BCBCDC3210CB2F2001F016A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		1CF71B9D9E432B8029D3C734 /* Pods-Sonder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sonder/Pods-Sonder.debug.xcconfig"; sourceTree = "<group>"; };
 		6B3FCE7F359FAECCA2481095 /* Pods_Sonder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sonder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,7 +73,10 @@
 			children = (
 				1BCBCDC2210CB2D1001F016A /* Extensions */,
 				1B05CCA3210A3A8D0064521D /* AppDelegate.swift */,
-				1B05CCA5210A3A8D0064521D /* MainFeedViewController.swift */,
+				1B05CCA5210A3A8D0064521D /* LoginViewController.swift */,
+				1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */,
+				1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */,
+				1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */,
 				1B05CCA7210A3A8D0064521D /* Main.storyboard */,
 				1B05CCAA210A3A8F0064521D /* Assets.xcassets */,
 				1B05CCAC210A3A8F0064521D /* LaunchScreen.storyboard */,
@@ -197,12 +206,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sonder/Pods-Sonder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B05CCA6210A3A8D0064521D /* MainFeedViewController.swift in Sources */,
+				1B05CCA6210A3A8D0064521D /* LoginViewController.swift in Sources */,
 				1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */,
+				1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */,
+				1BCBCDCA210E14AA001F016A /* UserProfileHeader.swift in Sources */,
+				1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */,
 				1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
