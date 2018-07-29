@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
         bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -56,6 +58,7 @@ class LoginViewController: UIViewController {
         bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -83,6 +86,18 @@ class LoginViewController: UIViewController {
     
     
     //MARK:- helper functions
+    
+    @objc func handleTextInputChange() {
+        let isFormValid = emailTextField.text?.isEmpty == false && userNameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
+        
+        if isFormValid {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        }
+    }
     
     @objc fileprivate func handleSignUp() {
         
@@ -137,7 +152,7 @@ class LoginViewController: UIViewController {
         signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
     }
     
-    //MARK:- Firebase
+    
     
     
     
