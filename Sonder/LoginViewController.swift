@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Firebase
 
 class LoginViewController: UIViewController {
@@ -79,12 +80,26 @@ class LoginViewController: UIViewController {
         setupUI()
     }
     
+    
+    
     //MARK:- helper functions
     
     @objc fileprivate func handleSignUp() {
         
-        print("123 test...")
-        
+        guard let email = emailTextField.text, !email.isEmpty else {return}
+        guard let userName = userNameTextField.text, !userName.isEmpty else {return}
+        guard let password = passwordTextField.text, !password.isEmpty else {return}
+
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error: Error?) in
+            
+            if let err = error {
+                print("failed to create a user", err)
+                return
+            }
+            
+            print("succesfully created a user in firebase", user?.uid ?? "")
+
+        }
     }
     
     //MARK:- setup UI

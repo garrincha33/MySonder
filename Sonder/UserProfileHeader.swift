@@ -11,11 +11,9 @@ import UIKit
 class UserProfileHeader: UICollectionViewCell {
     
     let profileImageView: UIImageView = {
-        
         let iv = UIImageView()
         iv.backgroundColor = .red
         return iv
-    
     }()
     
     
@@ -26,8 +24,7 @@ class UserProfileHeader: UICollectionViewCell {
         
         addSubview(profileImageView)
         profileImageView.anchor(top: topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
-        
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
