@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
@@ -71,7 +72,7 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
-        button.isEnabled = true
+        button.isEnabled = false
         return button
     }()
     
@@ -102,7 +103,7 @@ class LoginViewController: UIViewController {
     @objc fileprivate func handleSignUp() {
         
         guard let email = emailTextField.text, !email.isEmpty else {return}
-        guard let userName = userNameTextField.text, !userName.isEmpty else {return}
+        guard let username = userNameTextField.text, !username.isEmpty else {return}
         guard let password = passwordTextField.text, !password.isEmpty else {return}
 
         Auth.auth().createUser(withEmail: email, password: password) { (user, error: Error?) in
@@ -111,9 +112,23 @@ class LoginViewController: UIViewController {
                 print("failed to create a user", err)
                 return
             }
-            
             print("succesfully created a user in firebase", user?.uid ?? "")
-
+            
+            guard let uid = user?.uid else {return}
+            
+            let usernameValues = ["username": username]
+            let values = [uid: usernameValues]
+            
+            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                
+                if let err =  err {
+                    print("failed to add user", err)
+                    return
+                }
+                
+                print("success....saved userinfo to DB")
+                
+            })
         }
     }
     
@@ -151,14 +166,5 @@ class LoginViewController: UIViewController {
         signUpButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
