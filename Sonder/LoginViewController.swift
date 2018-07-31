@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -134,20 +135,37 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             print("succesfully created a user in firebase", user?.uid ?? "")
             
-            guard let uid = user?.uid else {return}
+            guard let image = self.addPhotoButton.imageView?.image else {return}
+            guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else {return}
+            let fileName = NSUUID().uuidString
             
-            let usernameValues = ["username": username]
-            let values = [uid: usernameValues]
+            let storageRef = Storage.storage().reference()
+            let storageRefChild = storageRef.child("profile_images").child(fileName)
             
-            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
-                
-                if let err =  err {
-                    print("failed to add user", err)
+            storageRefChild.putData(uploadData, metadata: nil, completion: { (metadata, err) in
+                if let err = err {
+                    print("unable to add into firebase storage due to err: \(err)")
                     return
                 }
-                
-                print("success....saved userinfo to DB")
-                
+                storageRefChild.downloadURL(completion: { (url, err) in
+                    if let err = err {
+                        print("unable to retrieve url due to error: \(err.localizedDescription)")
+                        return
+                    }
+                    let profilePicUrl = url?.absoluteString
+                    print("profile image successfully added into firebase storage with url: \(profilePicUrl ?? "")")
+                    
+                    guard let uid = user?.uid else {return}
+                    let usernameValues = ["username": username, "profilePicUrl": profilePicUrl]
+                    let values = [uid: usernameValues]
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                        if let err =  err {
+                            print("failed to add user", err)
+                            return
+                        }
+                        print("success....saved userinfo to DB")
+                    })
+                })
             })
         }
     }
