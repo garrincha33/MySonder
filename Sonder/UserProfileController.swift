@@ -31,18 +31,15 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     @objc func handleLogOut() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
-            
-            print("before")
-            print(Auth.auth().currentUser ?? "")
+
             do {
                 try Auth.auth().signOut()
                 
-                let loginController = UserLoginController()
-                self.present(loginController, animated: true, completion: nil)
+//                let loginController = UserLoginController()
+//                self.present(loginController, animated: true, completion: nil)
 
                 print("user signout")
-                print(Auth.auth().currentUser ?? "")
-                print("after")
+
                 
             } catch let signOutErr {
                 print("Failed to sign out:", signOutErr)

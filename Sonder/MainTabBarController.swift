@@ -13,16 +13,16 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if Auth.auth().currentUser == nil {
-//            //show if not logged in
-//            DispatchQueue.main.async {
-//                let loginController = UserLoginController()
-//                let navController = UINavigationController(rootViewController: loginController)
-//                self.present(navController, animated: true, completion: nil)
-//            }
-//
-//            return
-//        }
+        if Auth.auth().currentUser == nil {
+            //show if not logged in
+            DispatchQueue.main.async {
+                let loginController = UserLoginController()
+                let navController = UINavigationController(rootViewController: loginController)
+                self.present(navController, animated: true, completion: nil)
+            }
+
+            return
+        }
         
         
         
