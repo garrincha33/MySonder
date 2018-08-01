@@ -84,10 +84,20 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "bg1"))
         setupUI()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkAlreadyLoggedIn()
     }
     
-    
-    
+    fileprivate func checkAlreadyLoggedIn() {
+        if Auth.auth().currentUser != nil {
+            let controller = MainTabBarController()
+            present(controller, animated: true, completion: nil)
+        }
+    }
+
     //MARK:- helper functions
     @objc func handleAddPhoto() {
         let imagePickerController = UIImagePickerController()

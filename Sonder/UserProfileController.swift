@@ -19,7 +19,37 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         navigationItem.title = Auth.auth().currentUser?.uid
         fetchUser()
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
+        
+        setupLogOutButton()
 
+    }
+    
+    fileprivate func setupLogOutButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "logout").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
+    }
+    
+    @objc func handleLogOut() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
+            
+            print("before")
+            print(Auth.auth().currentUser ?? "")
+            do {
+                try Auth.auth().signOut()
+                
+                let loginController = UserLoginController()
+                self.present(loginController, animated: true, completion: nil)
+
+                print("user signout")
+                print(Auth.auth().currentUser ?? "")
+                print("after")
+                
+            } catch let signOutErr {
+                print("Failed to sign out:", signOutErr)
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
