@@ -20,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainTabBarController()
+        window?.rootViewController = LoginViewController()
         
         
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         return true
+    }
+    
+    override init() {
+        FirebaseApp.configure()
+   
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

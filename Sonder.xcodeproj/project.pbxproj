@@ -13,6 +13,7 @@
 		1B05CCAB210A3A8F0064521D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAA210A3A8F0064521D /* Assets.xcassets */; };
 		1B05CCAE210A3A8F0064521D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAC210A3A8F0064521D /* LaunchScreen.storyboard */; };
 		1B05CCB6210A3C2A0064521D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCB5210A3C2A0064521D /* GoogleService-Info.plist */; };
+		1B86982E2112340D00524F36 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86982D2112340D00524F36 /* UserLoginController.swift */; };
 		1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC3210CB2F2001F016A /* UIColor.swift */; };
 		1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */; };
 		1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */; };
@@ -30,6 +31,7 @@
 		1B05CCAD210A3A8F0064521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B05CCAF210A3A8F0064521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B05CCB5210A3C2A0064521D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B86982D2112340D00524F36 /* UserLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
 		1BCBCDC3210CB2F2001F016A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				1BCBCDC2210CB2D1001F016A /* Extensions */,
 				1B05CCA3210A3A8D0064521D /* AppDelegate.swift */,
 				1B05CCA5210A3A8D0064521D /* LoginViewController.swift */,
+				1B86982D2112340D00524F36 /* UserLoginController.swift */,
 				1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */,
 				1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */,
 				1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */,
@@ -236,6 +239,7 @@
 				1BCBCDCA210E14AA001F016A /* UserProfileHeader.swift in Sources */,
 				1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */,
 				1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */,
+				1B86982E2112340D00524F36 /* UserLoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
