@@ -78,10 +78,20 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return button
     }()
     
+    let alreadyHaveAnAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .white
+        button.setTitle("Already have an account?  Sign In.", for: .normal)
+        button.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+        return button
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(alreadyHaveAnAccountButton)
+        alreadyHaveAnAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "bg1"))
         setupUI()
         
@@ -104,6 +114,12 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func handleSignIn() {
+        
+       navigationController?.popViewController(animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -213,6 +229,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         signUpButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        
+        
     }
 }
 
