@@ -27,6 +27,7 @@ class UserLoginController: UIViewController {
     
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
+        button.tintColor = .white
         button.setTitle("Don't have an account?  Sign Up.", for: .normal)
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
@@ -42,7 +43,7 @@ class UserLoginController: UIViewController {
         bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
-        //tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -57,7 +58,7 @@ class UserLoginController: UIViewController {
         bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
-       // tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
@@ -95,8 +96,6 @@ class UserLoginController: UIViewController {
         
         setupInputFields()
         
-        
-        
     }
     
     fileprivate func setupInputFields() {
@@ -109,5 +108,17 @@ class UserLoginController: UIViewController {
         view.addSubview(stackView)
         stackView.anchor(top: loginContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
 
+    }
+    
+    @objc func handleTextInputChange() {
+        let isFormValid = emailTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
+        
+        if isFormValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        }
     }
 }
