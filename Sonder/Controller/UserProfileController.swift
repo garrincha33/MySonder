@@ -35,8 +35,9 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
             do {
                 try Auth.auth().signOut()
                 
-//                let loginController = UserLoginController()
-//                self.present(loginController, animated: true, completion: nil)
+                let loginController = UserLoginController()
+                let navigationController = UINavigationController(rootViewController: loginController)
+                self.present(navigationController, animated: true, completion: nil)
 
                 print("user signout")
 
