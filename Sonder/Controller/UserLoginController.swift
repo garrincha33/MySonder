@@ -76,7 +76,7 @@ class UserLoginController: UIViewController {
     }()
     
     @objc func handleShowSignUp() {
-        let signUpController = LoginViewController()
+        let signUpController = UserRegistrationViewController()
         navigationController?.pushViewController(signUpController, animated: true)
     }
     

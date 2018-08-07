@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA3210A3A8D0064521D /* AppDelegate.swift */; };
-		1B05CCA6210A3A8D0064521D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA5210A3A8D0064521D /* LoginViewController.swift */; };
+		1B05CCA6210A3A8D0064521D /* UserRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05CCA5210A3A8D0064521D /* UserRegistrationViewController.swift */; };
 		1B05CCA9210A3A8D0064521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCA7210A3A8D0064521D /* Main.storyboard */; };
 		1B05CCAB210A3A8F0064521D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAA210A3A8F0064521D /* Assets.xcassets */; };
 		1B05CCAE210A3A8F0064521D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B05CCAC210A3A8F0064521D /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		1AFC47CF8CBC7963001ECB50 /* Pods-Sonder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonder/Pods-Sonder.release.xcconfig"; sourceTree = "<group>"; };
 		1B05CCA0210A3A8C0064521D /* Sonder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B05CCA3210A3A8D0064521D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B05CCA5210A3A8D0064521D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1B05CCA5210A3A8D0064521D /* UserRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationViewController.swift; sourceTree = "<group>"; };
 		1B05CCA8210A3A8D0064521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B05CCAA210A3A8F0064521D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B05CCAD210A3A8F0064521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,13 +73,11 @@
 		1B05CCA2210A3A8C0064521D /* Sonder */ = {
 			isa = PBXGroup;
 			children = (
+				1B869831211A142400524F36 /* Controller */,
+				1B869830211A141D00524F36 /* View */,
+				1B86982F211A140800524F36 /* Model */,
 				1BCBCDC2210CB2D1001F016A /* Extensions */,
 				1B05CCA3210A3A8D0064521D /* AppDelegate.swift */,
-				1B05CCA5210A3A8D0064521D /* LoginViewController.swift */,
-				1B86982D2112340D00524F36 /* UserLoginController.swift */,
-				1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */,
-				1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */,
-				1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */,
 				1B05CCA7210A3A8D0064521D /* Main.storyboard */,
 				1B05CCAA210A3A8F0064521D /* Assets.xcassets */,
 				1B05CCAC210A3A8F0064521D /* LaunchScreen.storyboard */,
@@ -87,6 +85,33 @@
 				1B05CCB5210A3C2A0064521D /* GoogleService-Info.plist */,
 			);
 			path = Sonder;
+			sourceTree = "<group>";
+		};
+		1B86982F211A140800524F36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1B869830211A141D00524F36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BCBCDC9210E14AA001F016A /* UserProfileHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B869831211A142400524F36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */,
+				1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */,
+				1B86982D2112340D00524F36 /* UserLoginController.swift */,
+				1B05CCA5210A3A8D0064521D /* UserRegistrationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1BCBCDC2210CB2D1001F016A /* Extensions */ = {
@@ -233,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B05CCA6210A3A8D0064521D /* LoginViewController.swift in Sources */,
+				1B05CCA6210A3A8D0064521D /* UserRegistrationViewController.swift in Sources */,
 				1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */,
 				1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */,
 				1BCBCDCA210E14AA001F016A /* UserProfileHeader.swift in Sources */,
