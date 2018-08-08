@@ -29,7 +29,7 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         tf.attributedPlaceholder = NSAttributedString(string: "Username",
         attributes: [NSAttributedStringKey.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
         let bottomLayerUser = CALayer()
-        bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 0, height: 0.6)
+        bottomLayerUser.frame = CGRect(x: 0, y: 29, width: 300, height: 0.6)
         bottomLayerUser.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 175/255, alpha: 1).cgColor
         tf.layer.addSublayer(bottomLayerUser)
         tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
@@ -190,6 +190,10 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
                             return
                         }
                         print("success....saved userinfo to DB")
+                        guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else {return}
+                        mainTabBarController.setupViewControllers()
+                        
+                        self.dismiss(animated: true, completion: nil)
                     })
                 })
             })
