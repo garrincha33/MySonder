@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class UserLoginController: UIViewController {
     
@@ -70,7 +72,7 @@ class UserLoginController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
-        //button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -96,6 +98,22 @@ class UserLoginController: UIViewController {
         
         setupInputFields()
         
+    }
+    
+    @objc fileprivate func handleLogin() {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        Auth.auth().signIn(withEmail: email, password: password) { (user, err) in
+            if let err = err {
+                print("unable to signin with username and passsword provided", err)
+            }
+            print("signed in successfully to firebase with user :-", user?.uid ?? "")
+            
+            guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else {return}
+            mainTabBarController.setupViewControllers()
+
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     fileprivate func setupInputFields() {
