@@ -106,6 +106,7 @@ class UserLoginController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (user, err) in
             if let err = err {
                 print("unable to signin with username and passsword provided", err)
+                return
             }
             print("signed in successfully to firebase with user :-", user?.uid ?? "")
             
