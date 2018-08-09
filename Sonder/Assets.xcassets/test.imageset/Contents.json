@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "logout.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "np_building_888660_000000.png",
       "scale" : "2x"
     },
     {
