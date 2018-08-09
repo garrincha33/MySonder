@@ -15,6 +15,22 @@ extension UIColor {
 }
 
 extension UIView {
+    
+    
+    
+    func centerAnchor(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let centerX = centerX {
+            self.centerXAnchor.constraint(equalTo: centerX).isActive = true
+        }
+        
+        if let centerY = centerY {
+            self.centerYAnchor.constraint(equalTo: centerY).isActive = true
+        }
+    }
+    
     func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
         
         translatesAutoresizingMaskIntoConstraints = false
