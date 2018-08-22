@@ -29,15 +29,16 @@ class MainTabBarController: UITabBarController {
     
     
     
+    
         func setupViewControllers() {
             //home controller
-            let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: UserProfileController(collectionViewLayout: UICollectionViewFlowLayout()))
+            let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()))
 
             //search controller
             let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"))
             
             //camera controller
-            let plusNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"))
+            //let plusNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "plus_unselected"), selectedImage: #imageLiteral(resourceName: "plus_unselected"))
             
             //like controller
             let likeNavcontroller = templateNavController(unselectedImage: #imageLiteral(resourceName: "like_unselected"), selectedImage: #imageLiteral(resourceName: "like_selected"))
@@ -50,7 +51,7 @@ class MainTabBarController: UITabBarController {
         profileNavController.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
             
         tabBar.tintColor = .black
-        viewControllers = [homeNavController, searchNavController, plusNavController, likeNavcontroller,  profileNavController]
+        viewControllers = [homeNavController, searchNavController, likeNavcontroller,  profileNavController]
             
             //modify tab bar insets
             guard let items = tabBar.items else {return}
