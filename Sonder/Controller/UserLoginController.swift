@@ -23,8 +23,7 @@ class UserLoginController: UIViewController {
         logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         //view.backgroundColor = UIColor.rgb(red: 0, green: 120, blue: 175)
         return view
-        
-        
+  
     }()
     
     let signUpButton: UIButton = {
