@@ -12,19 +12,28 @@ class HomePostCell: UICollectionViewCell {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+        view.layer.shadowOpacity = 0.8
+        view.layer.shadowRadius = 3.0
+        view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        view.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
         return view
     }()
     
     let postLable: UILabel = {
         let lable = UILabel()
-        lable.backgroundColor = .yellow
+        lable.backgroundColor = .white
         return lable
     }()
     
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .red
+        iv.layer.shadowOpacity = 0.8
+        iv.layer.shadowRadius = 3.0
+        iv.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        iv.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+        iv.layer.cornerRadius = 4
         return iv
     }()
     
@@ -49,5 +58,11 @@ class HomePostCell: UICollectionViewCell {
     
     @objc fileprivate func handlePlayAudio() {
         print("test")
+    }
+    
+    fileprivate func addShadow(view: UIView) {
+        view.layer.shadowRadius = 3.0
+        view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        view.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
     }
 }
