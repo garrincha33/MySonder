@@ -203,7 +203,6 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
     //MARK:- setup UI
     
     fileprivate func setupUI() {
-        
         view.addSubview(addPhotoButton)
         addPhotoButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
         addPhotoButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
@@ -233,8 +232,6 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         signUpButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
-        
-        
     }
 }
 

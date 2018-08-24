@@ -13,6 +13,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "post", style: .plain, target: self, action: #selector(handlePost))
+        
         collectionView?.backgroundColor = .white
         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: String(describing: HomePostCell.self))
         
@@ -31,6 +33,17 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         
         return cell
+    }
+    
+    @objc fileprivate func handlePost() {
+        
+        print("testing 123")
+        
+        let controller = ShareUserPost()
+        let navController = UINavigationController(rootViewController: controller)
+        present(navController, animated: true, completion: nil)
+        
+        
     }
 
 }

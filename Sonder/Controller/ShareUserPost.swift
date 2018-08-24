@@ -13,5 +13,13 @@ class ShareUserPost: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .blue
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancelButton))
     }
+    
+    @objc fileprivate func handleCancelButton() {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }
