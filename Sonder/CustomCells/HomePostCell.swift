@@ -17,6 +17,7 @@ class HomePostCell: UICollectionViewCell {
         view.layer.shadowRadius = 3.0
         view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         view.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+        view.layer.cornerRadius = 16
         return view
     }()
     
@@ -29,20 +30,10 @@ class HomePostCell: UICollectionViewCell {
     let postLable: UILabel = {
         let lable = UILabel()
         lable.backgroundColor = .yellow
+        lable.layer.cornerRadius = 8
+        lable.clipsToBounds = true
         return lable
     }()
-    
-//    let imageView: UIImageView = {
-//        let iv = UIImageView()
-//        iv.backgroundColor = .red
-//        iv.layer.shadowOpacity = 0.8
-//        iv.layer.shadowRadius = 3.0
-//        iv.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-//        iv.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
-//        iv.layer.cornerRadius = 4
-//        return iv
-//    }()
-//
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,13 +43,6 @@ class HomePostCell: UICollectionViewCell {
         innerView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: -10, paddingRight: 10, width: 0, height: 0)
         addSubview(postLable)
         postLable.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 0, height: 0)
-
-        
-//        addSubview(imageView)
-//        imageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: -20, paddingRight: 20, width: 150, height: 100)
-//        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
