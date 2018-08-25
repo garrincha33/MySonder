@@ -29,7 +29,7 @@ class HomePostCell: UICollectionViewCell {
     
     let postLable: UILabel = {
         let lable = UILabel()
-        lable.backgroundColor = .yellow
+        lable.backgroundColor = .white
         lable.layer.cornerRadius = 8
         lable.clipsToBounds = true
         return lable
