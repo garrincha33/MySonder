@@ -40,8 +40,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         print("testing 123")
         
         let controller = ShareUserPost()
-        let navController = UINavigationController(rootViewController: controller)
-        present(navController, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
         
         
     }
