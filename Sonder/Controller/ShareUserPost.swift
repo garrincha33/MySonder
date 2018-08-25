@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class ShareUserPost: UIViewController {
     override func viewDidLoad() {
@@ -16,6 +18,12 @@ class ShareUserPost: UIViewController {
         setupTextContainerView()
 
     }
+    
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .white
+        return tv
+    }()
 
     fileprivate func setupTextContainerView() {
         let containerView = UIView()
@@ -24,13 +32,7 @@ class ShareUserPost: UIViewController {
         containerView.layer.shadowRadius = 3.0
         containerView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         containerView.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
-        
-        let textView: UITextView = {
-            let tv = UITextView()
-            tv.backgroundColor = .white
-            return tv
-        }()
-        
+   
         let postButton: UIButton = {
             let button = UIButton(type: .system)
             button.setTitle("Ask Your Question", for: .normal)
@@ -40,7 +42,7 @@ class ShareUserPost: UIViewController {
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
             button.setTitleColor(.white, for: .normal)
             button.addTarget(self, action: #selector(handlePost), for: .touchUpInside)
-            button.isEnabled = false
+            button.isEnabled = true
             return button
         }()
 
@@ -54,6 +56,19 @@ class ShareUserPost: UIViewController {
     
     @objc fileprivate func handlePost() {
         print("testing 123")
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let caption = textView.text else {return}
+        let userPostRef = Database.database().reference().child("posts").child(uid)
+        let ref = userPostRef.childByAutoId()
+        
+        let values = ["caption": caption, "creationDate": Date().timeIntervalSince1970] as [String: Any]
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("unable to save post to db", err)
+                return
+            }
+            print("sucessfully saved post to DB")
+        }
     }
-
 }
