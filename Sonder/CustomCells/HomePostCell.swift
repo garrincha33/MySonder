@@ -32,6 +32,16 @@ class HomePostCell: UICollectionViewCell {
         lable.backgroundColor = .white
         lable.layer.cornerRadius = 8
         lable.clipsToBounds = true
+        let attributedText = NSMutableAttributedString(string: "Username", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+        
+        attributedText.append(NSAttributedString(string: " Some caption text that will perhaps wrap onto the next line", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
+        
+        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
+        
+        attributedText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
+        
+        lable.attributedText = attributedText
+        lable.numberOfLines = 0
         return lable
     }()
     
@@ -57,5 +67,6 @@ class HomePostCell: UICollectionViewCell {
         view.layer.shadowRadius = 3.0
         view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         view.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+        
     }
 }
