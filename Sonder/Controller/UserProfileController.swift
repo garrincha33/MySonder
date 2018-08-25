@@ -15,7 +15,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .blue
+        collectionView?.backgroundColor = .white
         navigationItem.title = Auth.auth().currentUser?.uid
         fetchUser()
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
