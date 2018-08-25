@@ -24,6 +24,19 @@ class ShareUserPost: UIViewController {
         tv.backgroundColor = .white
         return tv
     }()
+    
+    let postButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Ask Your Question", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handlePost), for: .touchUpInside)
+        button.isEnabled = true
+        return button
+    }()
 
     fileprivate func setupTextContainerView() {
         let containerView = UIView()
@@ -32,19 +45,6 @@ class ShareUserPost: UIViewController {
         containerView.layer.shadowRadius = 3.0
         containerView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         containerView.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
-   
-        let postButton: UIButton = {
-            let button = UIButton(type: .system)
-            button.setTitle("Ask Your Question", for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
-            button.layer.cornerRadius = 5
-            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-            button.setTitleColor(.white, for: .normal)
-            button.addTarget(self, action: #selector(handlePost), for: .touchUpInside)
-            button.isEnabled = true
-            return button
-        }()
 
         view.addSubview(containerView)
         containerView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 200)
@@ -55,8 +55,8 @@ class ShareUserPost: UIViewController {
     }
     
     @objc fileprivate func handlePost() {
-        print("testing 123")
-        
+
+        guard let captionText = textView.text, !captionText.isEmpty else {return}
         guard let uid = Auth.auth().currentUser?.uid else {return}
         guard let caption = textView.text else {return}
         let userPostRef = Database.database().reference().child("posts").child(uid)
@@ -69,6 +69,8 @@ class ShareUserPost: UIViewController {
                 return
             }
             print("sucessfully saved post to DB")
+            _ = self.navigationController?.popToRootViewController(animated: true)
+            
         }
     }
 }
