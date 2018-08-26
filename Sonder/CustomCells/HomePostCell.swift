@@ -10,6 +10,14 @@ import UIKit
 
 class HomePostCell: UICollectionViewCell {
     
+    var post: Post? {
+        didSet {
+            print(post?.user ?? "")
+            usernameLable.text = post?.user.username
+            setupAttributedCaption()
+        }
+    }
+    
     let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -27,21 +35,19 @@ class HomePostCell: UICollectionViewCell {
         return view
     }()
     
+    let usernameLable: UILabel = {
+        let lable = UILabel()
+        lable.text = "Username"
+        lable.font = UIFont.boldSystemFont(ofSize: 14)
+        return lable
+        
+    }()
+    
     let postLable: UILabel = {
         let lable = UILabel()
         lable.backgroundColor = .white
         lable.layer.cornerRadius = 8
         lable.clipsToBounds = true
-        let attributedText = NSMutableAttributedString(string: "Username", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
-        
-        attributedText.append(NSAttributedString(string: " Some caption text that will perhaps wrap onto the next line", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
-        
-        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
-        
-        attributedText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
-        
-        lable.attributedText = attributedText
-        lable.numberOfLines = 0
         return lable
     }()
     
@@ -63,10 +69,18 @@ class HomePostCell: UICollectionViewCell {
         print("test")
     }
     
-    fileprivate func addShadow(view: UIView) {
-        view.layer.shadowRadius = 3.0
-        view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        view.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+    fileprivate func setupAttributedCaption() {
+        guard let post = self.post else {return}
         
+        let attributedText = NSMutableAttributedString(string: post.user.username, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+        
+        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
+        
+        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
+        
+        attributedText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
+        
+        postLable.attributedText = attributedText
+        postLable.numberOfLines = 0
     }
 }

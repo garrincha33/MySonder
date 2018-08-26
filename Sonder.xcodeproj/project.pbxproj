@@ -17,6 +17,8 @@
 		1BB8DE7D212DD4FC00C2EABA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE7C212DD4FC00C2EABA /* HomeController.swift */; };
 		1BB8DE80212DDA1000C2EABA /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE7F212DDA1000C2EABA /* HomePostCell.swift */; };
 		1BB8DE82213076C400C2EABA /* ShareUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE81213076C400C2EABA /* ShareUserPost.swift */; };
+		1BB8DE842131D35A00C2EABA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE832131D35A00C2EABA /* Post.swift */; };
+		1BB8DE8621329E9500C2EABA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE8521329E9500C2EABA /* User.swift */; };
 		1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC3210CB2F2001F016A /* UIColor.swift */; };
 		1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */; };
 		1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */; };
@@ -38,6 +40,8 @@
 		1BB8DE7C212DD4FC00C2EABA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1BB8DE7F212DDA1000C2EABA /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		1BB8DE81213076C400C2EABA /* ShareUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUserPost.swift; sourceTree = "<group>"; };
+		1BB8DE832131D35A00C2EABA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		1BB8DE8521329E9500C2EABA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1BCBCDC3210CB2F2001F016A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		1B86982F211A140800524F36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BB8DE832131D35A00C2EABA /* Post.swift */,
+				1BB8DE8521329E9500C2EABA /* User.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -276,12 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB8DE82213076C400C2EABA /* ShareUserPost.swift in Sources */,
+				1BB8DE842131D35A00C2EABA /* Post.swift in Sources */,
 				1B05CCA6210A3A8D0064521D /* UserRegistrationViewController.swift in Sources */,
 				1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */,
 				1BB8DE80212DDA1000C2EABA /* HomePostCell.swift in Sources */,
 				1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */,
 				1BCBCDCA210E14AA001F016A /* UserProfileHeader.swift in Sources */,
 				1BB8DE7D212DD4FC00C2EABA /* HomeController.swift in Sources */,
+				1BB8DE8621329E9500C2EABA /* User.swift in Sources */,
 				1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */,
 				1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */,
 				1B86982E2112340D00524F36 /* UserLoginController.swift in Sources */,
