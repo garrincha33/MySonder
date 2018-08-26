@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SVProgressHUD
 
 class UserLoginController: UIViewController {
     
@@ -100,6 +101,8 @@ class UserLoginController: UIViewController {
     }
     
     @objc fileprivate func handleLogin() {
+        progressHudCustom()
+        SVProgressHUD.show()
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         Auth.auth().signIn(withEmail: email, password: password) { (user, err) in
@@ -108,7 +111,7 @@ class UserLoginController: UIViewController {
                 return
             }
             print("signed in successfully to firebase with user :-", user?.uid ?? "")
-            
+            SVProgressHUD.dismiss()
             guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else {return}
             mainTabBarController.setupViewControllers()
 
@@ -126,6 +129,13 @@ class UserLoginController: UIViewController {
         view.addSubview(stackView)
         stackView.anchor(top: loginContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
 
+    }
+    
+    fileprivate func progressHudCustom() {
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        SVProgressHUD.setBackgroundLayerColor(UIColor.clear)
+        SVProgressHUD.setForegroundColor(UIColor.white)
     }
     
     @objc func handleTextInputChange() {

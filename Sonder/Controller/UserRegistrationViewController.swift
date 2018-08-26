@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import SVProgressHUD
 
 class UserRegistrationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -148,19 +149,18 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
     }
     
     @objc fileprivate func handleSignUp() {
-        
+        progressHudCustom()
+        SVProgressHUD.show()
         guard let email = emailTextField.text, !email.isEmpty else {return}
         guard let username = userNameTextField.text, !username.isEmpty else {return}
         guard let password = passwordTextField.text, !password.isEmpty else {return}
 
         Auth.auth().createUser(withEmail: email, password: password) { (user, error: Error?) in
-            
             if let err = error {
                 print("failed to create a user", err)
                 return
             }
             print("succesfully created a user in firebase", user?.uid ?? "")
-            
             guard let image = self.addPhotoButton.imageView?.image else {return}
             guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else {return}
             let fileName = NSUUID().uuidString
@@ -190,6 +190,8 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
                             return
                         }
                         print("success....saved userinfo to DB")
+
+                        SVProgressHUD.dismiss()
                         guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else {return}
                         mainTabBarController.setupViewControllers()
                         
@@ -198,6 +200,13 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
                 })
             })
         }
+    }
+    
+    fileprivate func progressHudCustom() {
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        SVProgressHUD.setBackgroundLayerColor(UIColor.clear)
+        SVProgressHUD.setForegroundColor(UIColor.white)
     }
     
     //MARK:- setup UI
