@@ -19,6 +19,7 @@
 		1BB8DE82213076C400C2EABA /* ShareUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE81213076C400C2EABA /* ShareUserPost.swift */; };
 		1BB8DE842131D35A00C2EABA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE832131D35A00C2EABA /* Post.swift */; };
 		1BB8DE8621329E9500C2EABA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE8521329E9500C2EABA /* User.swift */; };
+		1BB8DE89213332A000C2EABA /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8DE88213332A000C2EABA /* CustomImageView.swift */; };
 		1BCBCDC4210CB2F2001F016A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC3210CB2F2001F016A /* UIColor.swift */; };
 		1BCBCDC6210E0A20001F016A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */; };
 		1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */; };
@@ -42,6 +43,7 @@
 		1BB8DE81213076C400C2EABA /* ShareUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUserPost.swift; sourceTree = "<group>"; };
 		1BB8DE832131D35A00C2EABA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1BB8DE8521329E9500C2EABA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1BB8DE88213332A000C2EABA /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		1BCBCDC3210CB2F2001F016A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1BCBCDC5210E0A20001F016A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1BCBCDC7210E0CA6001F016A /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		1B05CCA2210A3A8C0064521D /* Sonder */ = {
 			isa = PBXGroup;
 			children = (
+				1BB8DE872133328400C2EABA /* Utils */,
 				1BB8DE7E212DDA0000C2EABA /* CustomCells */,
 				1B869831211A142400524F36 /* Controller */,
 				1B869830211A141D00524F36 /* View */,
@@ -135,6 +138,14 @@
 				1BB8DE7F212DDA1000C2EABA /* HomePostCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		1BB8DE872133328400C2EABA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BB8DE88213332A000C2EABA /* CustomImageView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		1BCBCDC2210CB2D1001F016A /* Extensions */ = {
@@ -295,6 +306,7 @@
 				1BCBCDC8210E0CA6001F016A /* UserProfileController.swift in Sources */,
 				1B05CCA4210A3A8D0064521D /* AppDelegate.swift in Sources */,
 				1B86982E2112340D00524F36 /* UserLoginController.swift in Sources */,
+				1BB8DE89213332A000C2EABA /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +454,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UMQAGMF379;
 				INFOPLIST_FILE = Sonder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twisted.Sonder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -458,7 +473,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UMQAGMF379;
 				INFOPLIST_FILE = Sonder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twisted.Sonder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
