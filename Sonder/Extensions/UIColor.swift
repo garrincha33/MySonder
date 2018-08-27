@@ -15,9 +15,7 @@ extension UIColor {
 }
 
 extension UIView {
-    
-    
-    
+
     func centerAnchor(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?) {
         
         translatesAutoresizingMaskIntoConstraints = false

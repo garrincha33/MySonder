@@ -70,7 +70,7 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        button.backgroundColor = UIColor.rgb(red: 44, green: 102, blue: 77)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
@@ -97,6 +97,10 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         setupUI()
         
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkAlreadyLoggedIn()
@@ -141,10 +145,10 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         
         if isFormValid {
             signUpButton.isEnabled = true
-            signUpButton.backgroundColor = UIColor.rgb(red: 17, green: 154, blue: 237)
+            signUpButton.backgroundColor = UIColor.rgb(red: 51, green: 212, blue: 128)
         } else {
             signUpButton.isEnabled = false
-            signUpButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+            signUpButton.backgroundColor = UIColor.rgb(red: 44, green: 102, blue: 77)
         }
     }
     

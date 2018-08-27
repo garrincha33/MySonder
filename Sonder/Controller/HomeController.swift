@@ -16,10 +16,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "post", style: .plain, target: self, action: #selector(handlePost))
-        
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: String(describing: HomePostCell.self))
         fetchPosts()
+        transparentNavBar()
         
     }
     
@@ -45,6 +45,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let controller = ShareUserPost()
         navigationController?.pushViewController(controller, animated: true)
 
+    }
+    
+    fileprivate func transparentNavBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     //fetch posts
