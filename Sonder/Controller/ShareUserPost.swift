@@ -14,14 +14,14 @@ class ShareUserPost: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.rgb(red: 240, green: 240, blue: 240)
+        view.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         setupTextContainerView()
 
     }
     
     let textView: UITextView = {
         let tv = UITextView()
-        tv.backgroundColor = .white
+        tv.backgroundColor = UIColor.rgb(red: 41, green: 61, blue: 70)
         return tv
     }()
     
@@ -29,7 +29,7 @@ class ShareUserPost: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Ask Your Question", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
+        button.backgroundColor = UIColor.rgb(red: 44, green: 102, blue: 77)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
@@ -40,7 +40,7 @@ class ShareUserPost: UIViewController {
 
     fileprivate func setupTextContainerView() {
         let containerView = UIView()
-        containerView.backgroundColor = .white
+        containerView.backgroundColor = UIColor.rgb(red: 41, green: 61, blue: 70)
         containerView.layer.shadowOpacity = 0.8
         containerView.layer.shadowRadius = 3.0
         containerView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)

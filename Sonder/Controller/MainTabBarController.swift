@@ -26,10 +26,6 @@ class MainTabBarController: UITabBarController {
         
         setupViewControllers()
     }
-    
-    
-    
-    
         func setupViewControllers() {
             //home controller
             let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()))
@@ -50,7 +46,9 @@ class MainTabBarController: UITabBarController {
         profileNavController.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
         profileNavController.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
             
-        tabBar.tintColor = .black
+        tabBar.tintColor = UIColor.rgb(red: 51, green: 212, blue: 128)
+        tabBar.isTranslucent = true
+        tabBar.barTintColor = .clear
         viewControllers = [homeNavController, searchNavController, likeNavcontroller,  profileNavController]
             
             //modify tab bar insets

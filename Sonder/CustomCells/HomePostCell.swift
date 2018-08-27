@@ -30,7 +30,7 @@ class HomePostCell: UICollectionViewCell {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.rgb(red: 40, green: 50, blue: 55)
         view.layer.shadowOpacity = 0.8
         view.layer.shadowRadius = 3.0
         view.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -41,7 +41,7 @@ class HomePostCell: UICollectionViewCell {
     
     let innerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.rgb(red: 40, green: 50, blue: 55)
         return view
     }()
     
@@ -49,15 +49,17 @@ class HomePostCell: UICollectionViewCell {
         let lable = UILabel()
         lable.text = "Username"
         lable.font = UIFont.boldSystemFont(ofSize: 14)
+        lable.textColor = UIColor.rgb(red: 200, green: 201, blue: 202)
         return lable
         
     }()
     
     let postLable: UILabel = {
         let lable = UILabel()
-        lable.backgroundColor = .white
+        lable.backgroundColor = UIColor.rgb(red: 40, green: 50, blue: 55)
         lable.layer.cornerRadius = 8
         lable.clipsToBounds = true
+        lable.textColor = UIColor.rgb(red: 180, green: 182, blue: 183)
         return lable
     }()
     
@@ -90,11 +92,11 @@ class HomePostCell: UICollectionViewCell {
     fileprivate func setupAttributedCaption() {
         guard let post = self.post else {return}
         
-        let attributedText = NSMutableAttributedString(string: post.user.username, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: " \(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
         
-        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
+//        attributedText.append(NSAttributedString(string: " is asking... \(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         
-        attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
+        attributedText.append(NSAttributedString(string: "\n\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
         
         attributedText.append(NSAttributedString(string: "1 week ago", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
         
