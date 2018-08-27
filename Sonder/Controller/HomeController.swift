@@ -10,7 +10,9 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, HomePostCellDelegate {
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+//
+//        return CGSize(width: view.frame.width, height: 250)
+        var height: CGFloat = 60 + 8 + 8
+        height += view.frame.width
+        height += 10
+        return CGSize(width: view.frame.width, height: height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,6 +44,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomePostCell.self), for: indexPath) as! HomePostCell
         
         cell.post = posts[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -46,11 +56,17 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationController?.pushViewController(controller, animated: true)
 
     }
-    
+
     fileprivate func transparentNavBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    func didTapAudioButton() {
+        print("testing from homeController")
+        let controller = AudioViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     //fetch posts

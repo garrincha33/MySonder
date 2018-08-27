@@ -24,7 +24,8 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     }
     
     fileprivate func setupLogOutButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "gear").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "gear").withRenderingMode(.automatic), style: .plain, target: self, action: #selector(handleLogOut))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.rgb(red: 51, green: 212, blue: 128)
     }
     
     fileprivate func transparentNavBar() {

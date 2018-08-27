@@ -135,7 +135,7 @@ class UserLoginController: UIViewController {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.setBackgroundColor(UIColor.clear)
         SVProgressHUD.setBackgroundLayerColor(UIColor.clear)
-        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.setForegroundColor(UIColor.rgb(red: 26, green: 151, blue: 233))
     }
     
     @objc func handleTextInputChange() {
